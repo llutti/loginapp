@@ -9,8 +9,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./register-page.component.scss']
 })
 export class RegisterPageComponent implements OnInit {
-  private email: string;
-  private password: string;
+  public email: string;
+  public password: string;
   constructor(
     private authService: AuthService,
     private router: Router,

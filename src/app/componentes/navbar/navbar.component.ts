@@ -7,10 +7,10 @@ import { AuthService } from '../../servicos/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  private isLogin: boolean;
-  private userName: string;
-  private userEmail: string;
-  private userPhoto: string;
+  public isLogin: boolean;
+  public userName: string;
+  public userEmail: string;
+  public userPhoto: string;
 
   constructor(private authService: AuthService) { }
 
