@@ -11,9 +11,11 @@ import { RegisterPageComponent } from './componentes/register-page/register-page
 import { LoginPageComponent } from './componentes/login-page/login-page.component';
 import { PrivadoPageComponent } from './componentes/privado-page/privado-page.component';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
-import {  AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+
+import { FlashMessagesModule, FlashMessagesService } from "angular2-flash-messages";
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FlashMessagesModule
   ],
-  providers: [],
+  providers: [FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
