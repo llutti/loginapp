@@ -35,4 +35,17 @@ export class LoginPageComponent implements OnInit {
         // this.router.navigate(['/login']);
       });
   }
+
+  onClickGoogleLogin() {
+    this.authService.loginGoogle()
+      .then((res) => {
+        this.flashMsg.show('Usuário Logado corretamente.', { cssClass: 'alert-success', timeout: 4000 })
+        this.router.navigate(['/privado']);
+      })
+      .catch((err) => {
+        console.log('Erro!!', err);
+        this.flashMsg.show(err.message, { cssClass: 'alert-danger', timeout: 4000 })
+        // this.router.navigate(['/login']);
+      });
+  }
 }
